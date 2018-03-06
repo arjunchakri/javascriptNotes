@@ -1,0 +1,24 @@
+----------- timer localstorage pagerefresh
+<div id = "timerr">  </div>
+<script>
+	var x;
+	if(localStorage.getItem("oldTimerValue") == null){
+		x = 0;
+	}
+	else{
+		x = localStorage.getItem("oldTimerValue");
+	}
+	var myFun = setInterval(function(){ 
+	x++; 
+	document.getElementById("timerr").innerHTML = x; 
+		if(x > 4){
+			clearInterval(myFun);
+localStorage.removeItem("oldTimerValue");
+		}
+	}, 1000);
+	
+	function recordTime(){
+		localStorage.setItem("oldTimerValue", x);
+	}
+	window.onbeforeunload = recordTime;
+</script>
