@@ -1,4 +1,4 @@
------------ timer localstorage pagerefresh
+#timer localstorage pagerefresh
 <div id = "timerr">  </div>
 <script>
 	var x;
@@ -22,3 +22,19 @@ localStorage.removeItem("oldTimerValue");
 	}
 	window.onbeforeunload = recordTime;
 </script>
+
+#Enter to click
+$('#textboxid').keypress(function(e) {
+			if (e.keyCode == 13)
+				$('#buttonid').click();
+});
+
+#radiobutton selected
+
+var searchperference = ($("input:radio[name=searchperfgroup]:checked").val());
+
+<label> <input name="searchperfgroup" id='option1' type="radio" value="1" checked> <span>Jira ID</span> </label><br>
+<label> <input name="searchperfgroup" id='option2' type="radio" value="2"> <span>Developer name</span> </label><br> 
+<label> <input name="searchperfgroup" id='option3' type="radio" value="3"> <span>Revision Number</span> </label><br>
+
+
